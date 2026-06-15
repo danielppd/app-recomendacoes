@@ -1,0 +1,27 @@
+# Dependências
+**/node_modules/
+
+# Builds
+backend/.next/
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+
+# Segredos / env (nunca commitar)
+**/.env
+**/.env.local
+**/.env*.local
+
+# TypeScript
+**/*.tsbuildinfo
+
+# macOS
+.DS_Store
+
+# Logs
+**/npm-debug.*
+**/yarn-error.*
+
+# Entre os .md, versionar apenas o README da raiz
+*.md
+!/README.md
