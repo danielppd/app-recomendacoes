@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     marginTop: spacing.sm,
   },
-  retryText: { color: colors.text, fontWeight: "700" },
+  retryText: { color: colors.onAccent, fontWeight: "700" },
   card: {
     backgroundColor: colors.surface,
     borderColor: colors.border,

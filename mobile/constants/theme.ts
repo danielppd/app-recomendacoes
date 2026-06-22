@@ -1,4 +1,4 @@
-// Identidade visual do Bubble (espelha bubble/app/globals.css)
+// Identidade visual do Bubble — preto + amarelo (marca ∞)
 export const colors = {
   bg: "#0f0f0f",
   surface: "#1a1a1a",
@@ -6,8 +6,9 @@ export const colors = {
   border: "#2e2e2e",
   text: "#f5f5f5",
   textMuted: "#a3a3a3",
-  accent: "#a855f7", // roxo "bubble"
-  accentMuted: "#7e3ff2",
+  accent: "#f5c518", // amarelo "bubble"
+  accentMuted: "#caa013",
+  onAccent: "#0f0f0f", // texto sobre o amarelo (contraste)
   danger: "#f87171",
 };
 

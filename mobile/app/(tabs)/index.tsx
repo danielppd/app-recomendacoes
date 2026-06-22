@@ -109,7 +109,7 @@ export default function HomeScreen() {
         >
           {status === "loading" ? (
             <View style={styles.row}>
-              <ActivityIndicator color={colors.text} />
+              <ActivityIndicator color={colors.onAccent} />
               <Text style={styles.buttonText}>Montando seu pack…</Text>
             </View>
           ) : (
@@ -167,6 +167,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   buttonDisabled: { opacity: 0.5 },
-  buttonText: { color: colors.text, fontSize: 16, fontWeight: "700" },
+  buttonText: { color: colors.onAccent, fontSize: 16, fontWeight: "700" },
   row: { flexDirection: "row", alignItems: "center", gap: spacing.sm },
 });

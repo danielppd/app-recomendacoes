@@ -11,7 +11,8 @@
       },
       "env": {
         "EXPO_PUBLIC_API_BASE": "https://bubble-backend-ruddy.vercel.app",
-        "EXPO_PUBLIC_SUPABASE_URL": "https://sqvysayeaoxfuynpwrwg.supabase.co"
+        "EXPO_PUBLIC_SUPABASE_URL": "https://sqvysayeaoxfuynpwrwg.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxdnlzYXllYW94ZnV5bnB3cndnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2OTI3NDksImV4cCI6MjA5MTI2ODc0OX0.P1DjWCKCr3nEDz0dRoqE_tGdJAjBsHl4bGtdo_vVWsI"
       }
     },
     "production": {

@@ -15,14 +15,27 @@ import { colors, radius, spacing } from "../constants/theme";
 type Mode = "signIn" | "signUp";
 
 export default function LoginScreen() {
-  const { signIn, signUp } = useAuth();
+  const { signIn, signUp, signInWithGoogle } = useAuth();
   const [mode, setMode] = useState<Mode>("signIn");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const [message, setMessage] = useState<{ kind: "error" | "info"; text: string } | null>(null);
 
   const canSubmit = email.trim().length > 3 && password.length >= 6 && !loading;
+
+  async function handleGoogle() {
+    setGoogleLoading(true);
+    setMessage(null);
+    try {
+      await signInWithGoogle();
+    } catch (e) {
+      setMessage({ kind: "error", text: e instanceof Error ? e.message : "Falha no login com Google." });
+    } finally {
+      setGoogleLoading(false);
+    }
+  }
 
   async function handleSubmit() {
     if (!canSubmit) return;
@@ -94,11 +107,29 @@ export default function LoginScreen() {
           disabled={!canSubmit}
         >
           {loading ? (
-            <ActivityIndicator color={colors.text} />
+            <ActivityIndicator color={colors.onAccent} />
           ) : (
             <Text style={styles.buttonText}>
               {mode === "signIn" ? "Entrar" : "Cadastrar"}
             </Text>
+          )}
+        </Pressable>
+
+        <View style={styles.divider}>
+          <View style={styles.line} />
+          <Text style={styles.dividerText}>ou</Text>
+          <View style={styles.line} />
+        </View>
+
+        <Pressable
+          style={[styles.googleButton, googleLoading && styles.buttonDisabled]}
+          onPress={handleGoogle}
+          disabled={googleLoading || loading}
+        >
+          {googleLoading ? (
+            <ActivityIndicator color={colors.text} />
+          ) : (
+            <Text style={styles.googleText}>Continuar com Google</Text>
           )}
         </Pressable>
 
@@ -144,6 +175,18 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   buttonDisabled: { opacity: 0.5 },
-  buttonText: { color: colors.text, fontSize: 16, fontWeight: "700" },
+  buttonText: { color: colors.onAccent, fontSize: 16, fontWeight: "700" },
+  divider: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginVertical: spacing.xs },
+  line: { flex: 1, height: 1, backgroundColor: colors.border },
+  dividerText: { color: colors.textMuted, fontSize: 13 },
+  googleButton: {
+    backgroundColor: colors.surface,
+    borderColor: colors.border,
+    borderWidth: 1,
+    borderRadius: radius.md,
+    padding: spacing.md,
+    alignItems: "center",
+  },
+  googleText: { color: colors.text, fontSize: 16, fontWeight: "600" },
   switch: { color: colors.textMuted, textAlign: "center", marginTop: spacing.md },
 });

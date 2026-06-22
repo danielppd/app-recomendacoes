@@ -77,7 +77,7 @@ export default function PackScreen() {
           )}
         </Pressable>
         <Pressable style={[styles.action, styles.actionPrimary]} onPress={handleShare}>
-          <Text style={styles.actionText}>Compartilhar</Text>
+          <Text style={[styles.actionText, styles.actionTextPrimary]}>Compartilhar</Text>
         </Pressable>
       </View>
     </ScrollView>
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
   actionDisabled: { opacity: 0.5 },
   actionPrimary: { backgroundColor: colors.accent },
   actionText: { color: colors.text, fontWeight: "700" },
+  actionTextPrimary: { color: colors.onAccent },
   empty: {
     flex: 1,
     backgroundColor: colors.bg,
@@ -117,5 +118,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     marginTop: spacing.sm,
   },
-  buttonText: { color: colors.text, fontWeight: "700" },
+  buttonText: { color: colors.onAccent, fontWeight: "700" },
 });

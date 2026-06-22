@@ -68,5 +68,5 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.md,
     paddingHorizontal: spacing.xl,
   },
-  buttonText: { color: colors.text, fontWeight: "700" },
+  buttonText: { color: colors.onAccent, fontWeight: "700" },
 });
