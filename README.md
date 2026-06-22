@@ -1,13 +1,11 @@
-# Bubble Mobile 🫧
+# Bubble Mobile 
 
-App mobile (Expo / React Native) que recomenda **cultura conectada pelo seu gosto**:
-você digita uma vibe, um artista ou um humor e recebe um **pack** com um **filme**,
-um **livro**, uma **música** e um **lugar** ligados por aquela vibe — cada item com
+App mobile (Expo / React Native) que recomenda cultura conectada pelo seu gosto.
+Você digita uma vibe, um artista ou um humor e recebe um pack com um **filme**,
+um livro, uma música e um lugar ligados por aquela vibe — cada item com
 uma frase explicando a conexão. Usa **localização + clima** para calibrar a
-recomendação, deixa **salvar** packs no histórico, **compartilhar** pelo recurso
-nativo do celular e manda uma **recomendação do dia** por notificação.
-
-> Ponderada 4 — aplicação mobile nativa sobre o backend existente do Bubble.
+recomendação, deixa salvar packs no histórico, compartilhar pelo recurso
+nativo do celular e manda uma recomendação do dia por notificação.
 
 ## Problema
 
@@ -15,8 +13,7 @@ Descobrir cultura é fragmentado: música num app, filme em outro, livro em outr
 Essa separação gera paralisia de escolha. O Bubble conecta os domínios pelo gosto,
 num pacote só, no celular, no momento em que a vontade bate.
 
-## Funcionalidades (e requisitos da atividade)
-
+## Funcionalidades 
 | Requisito | Como é atendido |
 |---|---|
 | **Mobile nativo** | Expo / React Native + TypeScript (compila para iOS/Android nativo). |
@@ -28,6 +25,10 @@ num pacote só, no celular, no momento em que a vontade bate.
 | **Compartilhamento** | `Share` nativo do React Native (texto do pack). |
 | **Hardware** | **GPS** (`expo-location`) → clima → calibra a vibe. **Biometria** (`expo-local-authentication`) para desbloqueio (bônus). |
 | **Erros / loading** | Estados de loading, vazio e erro em todas as telas; timeout nas chamadas. |
+
+## Vídeo Demo
+
+> [Link para o vídeo](https://drive.google.com/drive/folders/1y5s-s3N4Vu4VaTGPw_yGQtFhyWUAvE4l?usp=sharing)
 
 ## Arquitetura
 
