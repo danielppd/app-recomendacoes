@@ -26,10 +26,11 @@ function useProtectedRoute(hasSession: boolean, loading: boolean) {
 
   useEffect(() => {
     if (loading) return;
-    const inAuthGroup = segments[0] === "login";
+    // "login" e "auth" (callback do OAuth) não são protegidos
+    const inAuthGroup = segments[0] === "login" || segments[0] === "auth";
     if (!hasSession && !inAuthGroup) {
       router.replace("/login");
-    } else if (hasSession && inAuthGroup) {
+    } else if (hasSession && segments[0] === "login") {
       router.replace("/");
     }
   }, [hasSession, loading, segments, router]);
@@ -59,6 +60,7 @@ function RootNavigator() {
     >
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="login" options={{ headerShown: false }} />
+      <Stack.Screen name="auth/callback" options={{ headerShown: false }} />
       <Stack.Screen name="pack" options={{ title: "Seu pack" }} />
     </Stack>
   );

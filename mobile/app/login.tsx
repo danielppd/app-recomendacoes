@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   ActivityIndicator,
+  Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -68,7 +69,12 @@ export default function LoginScreen() {
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
       <View style={styles.container}>
-        <Text style={styles.brand}>🫧 Bubble</Text>
+        <Image
+          source={require("../assets/logo-bubble.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <Text style={styles.brand}>Bubble</Text>
         <Text style={styles.subtitle}>
           {mode === "signIn" ? "Entre para continuar" : "Crie sua conta"}
         </Text>
@@ -154,6 +160,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   flex: { flex: 1, backgroundColor: colors.bg },
   container: { flex: 1, justifyContent: "center", padding: spacing.lg, gap: spacing.md },
+  logo: { width: 120, height: 80, alignSelf: "center", marginBottom: spacing.sm },
   brand: { color: colors.text, fontSize: 34, fontWeight: "800", textAlign: "center" },
   subtitle: { color: colors.textMuted, fontSize: 16, textAlign: "center", marginBottom: spacing.md },
   input: {

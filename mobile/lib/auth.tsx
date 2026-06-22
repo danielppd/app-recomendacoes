@@ -10,7 +10,7 @@ import { supabase } from "./supabase";
 WebBrowser.maybeCompleteAuthSession();
 
 // Cria a sessão a partir da URL de retorno do OAuth (tokens ou code).
-async function createSessionFromUrl(url: string) {
+export async function createSessionFromUrl(url: string) {
   const { params, errorCode } = QueryParams.getQueryParams(url);
   if (errorCode) throw new Error(errorCode);
   if (params.access_token) {
